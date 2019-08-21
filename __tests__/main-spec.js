@@ -2,14 +2,12 @@ const createMultiplyTable = require('../main');
 
 it ('should return multiply table from 2 to 4 when call createMultiplyTable given 2 to 4', () => {
     expect(createMultiplyTable(2, 4)).toBe("2*2=4\r\n" +
-                                          "2*3=6  3*3=9\r\n" +
-                                          "2*4=8  3*4=12  4*4=16");
+                                           "2*3=6  3*3=9\r\n" +
+                                           "2*4=8  3*4=12  4*4=16");
 });
 
 it ('should return multiply table from 2 to 4 when call createMultiplyTable given 2 to 4', () => {
-    expect(createMultiplyTable(4, 2)).toBe("2*2=4\r\n" +
-        "2*3=6  3*3=9\r\n" +
-        "2*4=8  3*4=12  4*4=16");
+    expect(createMultiplyTable(4, 2)).toBe("start不能大于end");
 });
 
 it ('should return multiply table from 2 to 4 when call createMultiplyTable given 2 to 4', () => {
