@@ -3,7 +3,7 @@ function createMultiplyTable (start, end) {
     if(checkResult!=="Success"){
         return checkResult;
     }else{
-        return doMultiplyOperation(start, end);
+        return getMultiplyTable(start, end);
     }
 }
 
@@ -21,20 +21,44 @@ function checkInput(start, end){
  return checkResult;
 }
 
-function doMultiplyOperation(start, end){
-    let multiplyTable = [];
-    for(let i=start; i<=end; i++){
-        for (let j=start; j<=i; j++){
-            multiplyTable+=j+"*"+i+"="+i*j;
-            if(i!==j){
-                multiplyTable += "  "
-            }
-        }
-          if(i<end) {
-              multiplyTable+="\r\n";
-          }
+// function doMultiplyOperation(start, end){
+//     let multiplyTable = [];
+//     for(let i=start; i<=end; i++){
+//         for (let j=start; j<=i; j++){
+//             multiplyTable+=j+"*"+i+"="+i*j;
+//             if(i!==j){
+//                 multiplyTable += "  "
+//             }
+//         }
+//           if(i<end) {
+//               multiplyTable+="\r\n";
+//           }
+//     }
+//     return multiplyTable;
+// }
+
+function getMultiplyTable(start, end){
+    let result = "";
+    for(let index=start; index<=end; index++){
+        let  separator = index===end ? "" : "\r\n";
+        result = result+getLine(start,index) + separator;
     }
-    return multiplyTable;
+    return result;
 }
+
+function getLine(start, end){
+    let result = "";
+    for(let index=start; index<=end; index++){
+        let  separator = index===end ? "" : "\t";
+        result = result + getExpression(index,end) + separator;
+    }
+    return result;
+}
+
+function getExpression(start,end){
+    return `${start}*${end}=${start*end}`;
+}
+
+
 
 module.exports = createMultiplyTable;

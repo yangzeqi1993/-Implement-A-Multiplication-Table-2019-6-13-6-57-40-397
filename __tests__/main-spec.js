@@ -2,8 +2,8 @@ const createMultiplyTable = require('../main');
 
 it ('should return multiply table from 2 to 4 when call createMultiplyTable given 2 to 4', () => {
     expect(createMultiplyTable(2, 4)).toBe("2*2=4\r\n" +
-                                           "2*3=6  3*3=9\r\n" +
-                                           "2*4=8  3*4=12  4*4=16");
+                                           "2*3=6\t3*3=9\r\n" +
+                                           "2*4=8\t3*4=12\t4*4=16");
 });
 
 it ('should return multiply table from 2 to 4 when call createMultiplyTable given 2 to 4', () => {
@@ -16,9 +16,9 @@ it ('should return multiply table from 2 to 4 when call createMultiplyTable give
 
 it ('should return multiply table from 2 to 4 when call createMultiplyTable given 2 to 4', () => {
     expect(createMultiplyTable(-1, 2)).toBe("-1*-1=1\r\n" +
-        "-1*0=0  0*0=0\r\n" +
-        "-1*1=-1  0*1=0  1*1=1\r\n"+
-        "-1*2=-2  0*2=0  1*2=2  2*2=4");
+        "-1*0=0\t0*0=0\r\n" +
+        "-1*1=-1\t0*1=0\t1*1=1\r\n"+
+        "-1*2=-2\t0*2=0\t1*2=2\t2*2=4");
 });
 
 it ('should return multiply table from 2 to 4 when call createMultiplyTable given 2 to 4', () => {
